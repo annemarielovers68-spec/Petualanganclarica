@@ -1,0 +1,9 @@
+
+Ini mewakili karakter dengan topi petualang. Untuk ikon asli, gunakan tools di atas.
+
+### Tips Tambahan
+- Pastikan ikon transparan (background kosong) agar tampil bagus di app.
+- Jika bingung, cari tutorial YouTube: "How to make app icon in Canva".
+- Setelah upload, test di GitHub Pages: Ikon harus muncul saat "instal" di Android.
+
+Jika Anda butuh deskripsi lebih detail, link spesifik, atau bantuan edit kode lain, beri tahu saya! Ikon siap, game Anda hampir selesai. 🎨🚀
