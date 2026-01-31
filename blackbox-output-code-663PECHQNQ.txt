@@ -1,0 +1,62 @@
+const storyElement = document.getElementById('story');
+const choicesElement = document.getElementById('choices');
+const bgMusic = document.getElementById('bg-music');
+
+// Data cerita (sederhana; bisa diperluas)
+const story = {
+    start: {
+        text: "Halo, saya Clarica, pemandu Anda di petualangan ini. Kita berada di tepi hutan ajaib. Apa yang ingin Anda lakukan?",
+        choices: [
+            { text: "Masuk ke hutan", next: "forest" },
+            { text: "Kembali ke rumah", next: "end_bad" }
+        ]
+    },
+    forest: {
+        text: "Clarica: Bagus! Kita masuk hutan. Ada jalan kiri dan kanan. Mana yang dipilih?",
+        choices: [
+            { text: "Kiri (jalan gelap)", next: "dark_path" },
+            { text: "Kanan (jalan terang)", next: "bright_path" }
+        ]
+    },
+    dark_path: {
+        text: "Clarica: Jalan gelap ini berbahaya, tapi ada harta karun! Anda menemukannya. Petualangan selesai dengan kemenangan!",
+        choices: [
+            { text: "Main lagi", next: "start" }
+        ]
+    },
+    bright_path: {
+        text: "Clarica: Jalan terang ini aman, tapi tidak ada harta. Anda pulang kosong. Coba lagi?",
+        choices: [
+            { text: "Main lagi", next: "start" }
+        ]
+    },
+    end_bad: {
+        text: "Clarica: Sayang sekali, petualangan berakhir sebelum dimulai. Mari coba lagi!",
+        choices: [
+            { text: "Main lagi", next: "start" }
+        ]
+    }
+};
+
+let currentScene = 'start';
+
+function renderScene() {
+    const scene = story[currentScene];
+    storyElement.innerHTML = scene.text;
+    choicesElement.innerHTML = '';
+    scene.choices.forEach(choice => {
+        const button = document.createElement('button');
+        button.textContent = choice.text;
+        button.onclick = () => {
+            currentScene = choice.next;
+            renderScene();
+        };
+        choicesElement.appendChild(button);
+    });
+}
+
+// Mulai musik saat load
+window.onload = () => {
+    bgMusic.play();
+    renderScene();
+};

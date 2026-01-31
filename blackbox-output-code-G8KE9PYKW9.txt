@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Clarica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json"> <!-- Untuk PWA -->
+</head>
+<body>
+    <div id="game-container">
+        <h1>Petualangan Clarica</h1>
+        <div id="story"></div>
+        <div id="choices"></div>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav"> <!-- Musik latar sederhana; ganti dengan file Anda -->
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
